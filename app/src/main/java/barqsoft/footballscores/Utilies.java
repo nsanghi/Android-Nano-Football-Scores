@@ -84,4 +84,10 @@ public class Utilies
             default: return R.drawable.no_icon;
         }
     }
+
+    // from Udacity discssion blogs
+    public static int inversePositionForRTL(int position, int total)
+    {
+        return total - position - 1;
+    }
 }
