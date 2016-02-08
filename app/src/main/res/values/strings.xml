@@ -39,4 +39,5 @@
     <!-- Strings for accessability -->
     <string name="home_crest">Home Team Icon</string>
     <string name="away_crest">Away Team Icon</string>
+    <string name="add_widget">Add widget</string>
 </resources>
