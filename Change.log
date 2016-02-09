@@ -1,0 +1,17 @@
+Layout mirroring
+-----------------
+Added RTL in manifest
+fragment_main -> added padingStart paddingRight, layoutMarginStart and layoutMarginEnd
+detail_fragment -> added paddingSTart and paddingEnd
+                   added android:drawableStart="@android:/drawable/ic_menu_share"
+
+PageFragment -> updated to take care of RTL in the ViewPager and ViewPager titles
+
+Added personal api key in strings.xml
+
+Accessability
+added android:contentDescription="@string/share_text"  to the button in detail_fragment.xml
+added android:contentDescription to home_crest and away_crest icons in scores_list_item.xml
+
+added List widget. Also added description for icons for acccessability
+
