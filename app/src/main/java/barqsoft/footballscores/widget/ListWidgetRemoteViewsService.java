@@ -1,22 +1,14 @@
 package barqsoft.footballscores.widget;
 
 import android.annotation.TargetApi;
-import android.app.IntentService;
 import android.content.Intent;
-import android.content.Context;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.Build;
-import android.util.Log;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
-import android.widget.TextView;
-
-import java.util.concurrent.ExecutionException;
 
 import barqsoft.footballscores.DatabaseContract;
 import barqsoft.footballscores.R;
@@ -86,8 +78,8 @@ public class ListWidgetRemoteViewsService extends RemoteViewsService {
                 String awayName = data.getString(scoresAdapter.COL_AWAY);
                 String score = Utilies.getScores(data.getInt(scoresAdapter.COL_HOME_GOALS), data.getInt(scoresAdapter.COL_AWAY_GOALS));
                 String date = data.getString(scoresAdapter.COL_MATCHTIME);
-                int homeCrest = Utilies.getTeamCrestByTeamName(data.getString(scoresAdapter.COL_HOME));
-                int awayCrest = Utilies.getTeamCrestByTeamName(data.getString(scoresAdapter.COL_AWAY));
+                int homeCrest = Utilies.getTeamCrestByTeamName(ListWidgetRemoteViewsService.this, data.getString(scoresAdapter.COL_HOME));
+                int awayCrest = Utilies.getTeamCrestByTeamName(ListWidgetRemoteViewsService.this, data.getString(scoresAdapter.COL_AWAY));
 
                 views.setTextViewText(R.id.home_name, homeName);
                 views.setTextViewText(R.id.away_name, awayName);
